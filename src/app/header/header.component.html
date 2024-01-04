@@ -1,0 +1,8 @@
+<!-- 屬性型指令 (Attribute Directives)
+- 這種指令會修改元素的外觀或行為
+- 內建的屬性型指令:style 或 class -->
+<p [class.highlight]="isUpdatePrefix"
+[style.font-size.px]="fontSize"
+>{{prefix}}header works! Message from Parent:{{message}}</p>
+
+<button (click)="updatePrefix()">更新前言</button>

@@ -5,4 +5,29 @@
 [style.font-size.px]="fontSize"
 >{{prefix}}header works! Message from Parent:{{message}}</p>
 
+<!-- 結構型指令:會改變DOM的結構 -->
+<p *ngIf="isUpdatePrefix">
+ 前言已更新!
+</p>
+
+<!-- <pre>{{ fakeUsers | json }}</pre> -->
+
+<table border="1">
+  <tr>
+    <th>#</th>
+    <th>id</th>
+    <th>name</th>
+    <th>email</th>
+  </tr>
+  <!-- <tr *ngFor="let user of fakeUsers; let i=index"
+    [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}"> -->
+    <tr *ngFor="let user of fakeUsers; let i=index"
+    [class.highlight]="i%2==0">
+    <td>{{i}}</td>
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
+
 <button (click)="updatePrefix()">更新前言</button>

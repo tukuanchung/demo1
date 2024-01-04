@@ -23,6 +23,20 @@
     [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}"> -->
     <tr *ngFor="let user of fakeUsers; let i=index"
     [class.highlight]="i%2==0">
+    <td>
+      <span [ngSwitch]="i">
+          <p *ngSwitchCase="1">
+            ID=1
+          </p>
+          <p *ngSwitchDefault>
+            {{i}}
+            <!-- {{ 899 | currency:'TWD': 'symbol':'1.0.0'}} -->
+            {{ 0.38 | percent}}
+            <!-- {{ now | 'yyyy-MM-dd' }} -->
+            {{ now | twdate}}
+          </p>
+        </span>
+    </td>
     <td>{{i}}</td>
     <td>{{user.id}}</td>
     <td>{{user.name}}</td>

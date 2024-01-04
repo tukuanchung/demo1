@@ -20,6 +20,7 @@ export class HeaderComponent  implements OnInit{
     ngOnInit(): void {
       this.prefix = this.message
     }
+    now = new Date();
 
     fontSize = 12;
 
